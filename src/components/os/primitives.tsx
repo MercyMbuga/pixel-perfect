@@ -6,12 +6,18 @@ export function Panel({
   className,
 }: {
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
 }) {
   return <div className={cn("panel p-5", className)}>{children}</div>;
 }
 
-export function Label({ children, className }: { children: ReactNode; className?: string }) {
+export function Label({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string | undefined;
+}) {
   return (
     <span
       className={cn(
