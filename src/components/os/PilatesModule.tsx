@@ -8,10 +8,15 @@ const WEEKLY_GOAL = 4;
 
 export function PilatesModule() {
   const [completed, setCompleted] = useLocalState<number>("mercy.pilates.total", 0);
-  const [week, setWeek] = useLocalState<boolean[]>(
-    "mercy.pilates.week",
-    [false, false, false, false, false, false, false],
-  );
+  const [week, setWeek] = useLocalState<boolean[]>("mercy.pilates.week", [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   const [notes, setNotes] = useLocalState("mercy.pilates.notes", "");
   const [message, setMessage] = useState("System recommends controlled breathing.");
 

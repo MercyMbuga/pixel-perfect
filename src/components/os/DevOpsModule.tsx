@@ -62,9 +62,7 @@ export function DevOpsModule() {
           <Label>Active incident</Label>
           <Button onClick={() => setIncident(pick(DEVOPS_INCIDENTS))}>New incident</Button>
         </div>
-        <p className="mt-3 font-mono text-sm text-warn">
-          Current incident: {incident.incident}
-        </p>
+        <p className="mt-3 font-mono text-sm text-warn">Current incident: {incident.incident}</p>
         <p className="mt-1 font-mono text-sm text-muted-foreground">
           Suggested remediation: {incident.remediation}
         </p>
@@ -79,10 +77,7 @@ export function DevOpsModule() {
         </div>
         <div className="h-64 overflow-y-auto px-4 py-3 font-mono text-[13px] leading-relaxed">
           {history.map((line, i) => (
-            <div
-              key={i}
-              className={line.startsWith("$") ? "text-primary" : "text-foreground/80"}
-            >
+            <div key={i} className={line.startsWith("$") ? "text-primary" : "text-foreground/80"}>
               {line || "\u00a0"}
             </div>
           ))}

@@ -27,10 +27,53 @@ const WARNINGS_GOOD = [
 ];
 
 const RULES = [
-  { key: "effort", positive: ["planned", "booked", "picked me", "cooked", "paid", "surprised", "drove", "showed up", "date"], negative: ["hasn't planned", "no plan", "come over", "my place", "later maybe", "we'll see", "u up", "you up"] },
-  { key: "communication", positive: ["called", "texted", "explained", "told me", "asked", "apologized", "check"], negative: ["ignored", "left on read", "dry", "one word", "ghost", "seen", "didn't reply", "k"] },
-  { key: "initiative", positive: ["he planned", "he suggested", "he asked", "he booked", "he called"], negative: ["i always", "i had to", "i planned", "i suggested", "i texted first"] },
-  { key: "consistency", positive: ["every week", "always", "consistent", "on time", "keeps"], negative: ["sometimes", "randomly", "disappears", "3am", "only when", "hot and cold", "last minute"] },
+  {
+    key: "effort",
+    positive: [
+      "planned",
+      "booked",
+      "picked me",
+      "cooked",
+      "paid",
+      "surprised",
+      "drove",
+      "showed up",
+      "date",
+    ],
+    negative: [
+      "hasn't planned",
+      "no plan",
+      "come over",
+      "my place",
+      "later maybe",
+      "we'll see",
+      "u up",
+      "you up",
+    ],
+  },
+  {
+    key: "communication",
+    positive: ["called", "texted", "explained", "told me", "asked", "apologized", "check"],
+    negative: ["ignored", "left on read", "dry", "one word", "ghost", "seen", "didn't reply", "k"],
+  },
+  {
+    key: "initiative",
+    positive: ["he planned", "he suggested", "he asked", "he booked", "he called"],
+    negative: ["i always", "i had to", "i planned", "i suggested", "i texted first"],
+  },
+  {
+    key: "consistency",
+    positive: ["every week", "always", "consistent", "on time", "keeps"],
+    negative: [
+      "sometimes",
+      "randomly",
+      "disappears",
+      "3am",
+      "only when",
+      "hot and cold",
+      "last minute",
+    ],
+  },
 ];
 
 const LABELS: Record<string, string> = {

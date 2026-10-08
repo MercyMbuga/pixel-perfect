@@ -21,9 +21,7 @@ export function SystemCheck({ onHealth }: { onHealth: (n: number) => void }) {
     setLines([]);
     const steps = [...BOOT_LINES].sort(() => Math.random() - 0.5).slice(0, 6);
     steps.forEach((line, i) => {
-      timers.current.push(
-        setTimeout(() => setLines((l) => [...l, line]), 380 * (i + 1)),
-      );
+      timers.current.push(setTimeout(() => setLines((l) => [...l, line]), 380 * (i + 1)));
     });
     timers.current.push(
       setTimeout(
@@ -80,9 +78,7 @@ export function SystemCheck({ onHealth }: { onHealth: (n: number) => void }) {
         <div className="mt-4 space-y-2">
           <div className="flex items-center justify-between">
             <Label>Overall system health</Label>
-            <Badge tone={health > 75 ? "primary" : health > 55 ? "warn" : "chaos"}>
-              {health}%
-            </Badge>
+            <Badge tone={health > 75 ? "primary" : health > 55 ? "warn" : "chaos"}>{health}%</Badge>
           </div>
           <Meter value={health} tone={health > 75 ? "primary" : health > 55 ? "warn" : "chaos"} />
         </div>

@@ -14,26 +14,40 @@ export function FinanceModule() {
   const spent = expenses.reduce((a, e) => a + e.amount, 0);
   const remaining = amount - spent;
   const daily = days > 0 ? remaining / days : 0;
-  const survival = daily > 0 ? remaining / Math.max(1, spent / Math.max(1, expenses.length) || 300) : 0;
+  const survival =
+    daily > 0 ? remaining / Math.max(1, spent / Math.max(1, expenses.length) || 300) : 0;
   const health = amount > 0 ? Math.max(0, Math.min(100, (remaining / amount) * 100)) : 0;
 
   const status =
     remaining <= 0
-      ? { text: "SYSTEM OFFLINE", tone: "chaos" as const, msg: "Impulse purchases: RETROACTIVELY DENIED." }
+      ? {
+          text: "SYSTEM OFFLINE",
+          tone: "chaos" as const,
+          msg: "Impulse purchases: RETROACTIVELY DENIED.",
+        }
       : health < 30
-        ? { text: "LOW POWER MODE", tone: "warn" as const, msg: "Transport: REQUIRED. Everything else: negotiable." }
+        ? {
+            text: "LOW POWER MODE",
+            tone: "warn" as const,
+            msg: "Transport: REQUIRED. Everything else: negotiable.",
+          }
         : health < 65
-          ? { text: "RATIONING", tone: "warn" as const, msg: "Food: REQUIRED. Impulse purchases: DENIED." }
-          : { text: "OPERATIONAL", tone: "primary" as const, msg: "Stability detected. Do not celebrate with shopping." };
+          ? {
+              text: "RATIONING",
+              tone: "warn" as const,
+              msg: "Food: REQUIRED. Impulse purchases: DENIED.",
+            }
+          : {
+              text: "OPERATIONAL",
+              tone: "primary" as const,
+              msg: "Stability detected. Do not celebrate with shopping.",
+            };
 
   function addExpense(e: React.FormEvent) {
     e.preventDefault();
     const value = Number(cost);
     if (!name.trim() || !Number.isFinite(value) || value <= 0) return;
-    setExpenses((list) => [
-      ...list,
-      { id: crypto.randomUUID(), name: name.trim(), amount: value },
-    ]);
+    setExpenses((list) => [...list, { id: crypto.randomUUID(), name: name.trim(), amount: value }]);
     setName("");
     setCost("");
   }

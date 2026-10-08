@@ -33,12 +33,48 @@ export const Route = createFileRoute("/")({
 });
 
 const MODULES = [
-  { id: "brain", icon: "🧠", name: "Brain", desc: "Process manager for thoughts", status: "34% load" },
-  { id: "devops", icon: "💻", name: "DevOps", desc: "Skills, incidents, terminal", status: "Progressing" },
-  { id: "romance", icon: "❤️", name: "Romance", desc: "Incident response unit", status: "Supervised" },
-  { id: "finance", icon: "💰", name: "Finance", desc: "Survival budget simulator", status: "Low power" },
-  { id: "pilates", icon: "🧘🏾‍♀️", name: "Pilates", desc: "Consistency tracker", status: "Initializing" },
-  { id: "entertainment", icon: "📺", name: "Entertainment", desc: "Watchlist, spoiler-safe", status: "Protected" },
+  {
+    id: "brain",
+    icon: "🧠",
+    name: "Brain",
+    desc: "Process manager for thoughts",
+    status: "34% load",
+  },
+  {
+    id: "devops",
+    icon: "💻",
+    name: "DevOps",
+    desc: "Skills, incidents, terminal",
+    status: "Progressing",
+  },
+  {
+    id: "romance",
+    icon: "❤️",
+    name: "Romance",
+    desc: "Incident response unit",
+    status: "Supervised",
+  },
+  {
+    id: "finance",
+    icon: "💰",
+    name: "Finance",
+    desc: "Survival budget simulator",
+    status: "Low power",
+  },
+  {
+    id: "pilates",
+    icon: "🧘🏾‍♀️",
+    name: "Pilates",
+    desc: "Consistency tracker",
+    status: "Initializing",
+  },
+  {
+    id: "entertainment",
+    icon: "📺",
+    name: "Entertainment",
+    desc: "Blacklist, spoiler-safe",
+    status: "Protected",
+  },
 ] as const;
 
 type ModuleId = (typeof MODULES)[number]["id"];
@@ -52,7 +88,11 @@ function Desktop() {
   useEffect(() => {
     const tick = () =>
       setClock(
-        new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+        new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }),
       );
     tick();
     const id = setInterval(tick, 1000);
@@ -82,7 +122,10 @@ function Desktop() {
             </div>
             <p className="font-mono text-xs text-muted-foreground">{clock}</p>
             <div className="w-44">
-              <Meter value={health} tone={health > 75 ? "primary" : health > 55 ? "warn" : "chaos"} />
+              <Meter
+                value={health}
+                tone={health > 75 ? "primary" : health > 55 ? "warn" : "chaos"}
+              />
               <p className="mt-1 font-mono text-[11px] text-muted-foreground">
                 System health {health}%
               </p>

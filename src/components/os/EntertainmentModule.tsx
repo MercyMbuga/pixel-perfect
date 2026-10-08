@@ -106,9 +106,7 @@ export function EntertainmentModule() {
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Button onClick={() => update(s.id, { episode: s.episode + 1 })}>+1 episode</Button>
-                <Button
-                  onClick={() => update(s.id, { season: s.season + 1, episode: 1 })}
-                >
+                <Button onClick={() => update(s.id, { season: s.season + 1, episode: 1 })}>
                   Next season
                 </Button>
               </div>

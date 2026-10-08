@@ -11,14 +11,38 @@ export const BOOT_LINES = [
 ];
 
 export const SUBSYSTEMS = [
-  { name: "Academic subsystem", states: ["OPERATIONAL", "CAFFEINE-DEPENDENT", "DEADLINE-DRIVEN", "STABLE"] },
-  { name: "Career subsystem", states: ["UNDER CONSTRUCTION", "LOADING...", "PROGRESSING", "RECALCULATING"] },
-  { name: "DevOps subsystem", states: ["PROGRESSING", "CONTAINERIZED", "MOSTLY GREEN", "YAML-LIMITED"] },
-  { name: "Romantic decision-making subsystem", states: ["REQUIRES SUPERVISION", "UNDER REVIEW", "ROLLBACK ADVISED", "QUARANTINED"] },
-  { name: "Financial subsystem", states: ["LOW POWER MODE", "RATIONING", "SURPRISINGLY OKAY", "AIRPLANE MODE"] },
-  { name: "Pilates subsystem", states: ["INITIALIZING", "WARMING UP", "CORE ENGAGED", "SCHEDULED FOR LATER"] },
-  { name: "Sleep subsystem", states: ["DEPRECATED", "PARTIALLY RESTORED", "NEGOTIATING", "OVERCLOCKED"] },
-  { name: "Overthinking daemon", states: ["RUNNING (as always)", "CONSUMING 62% RAM", "CANNOT BE KILLED", "IDLE (suspicious)"] },
+  {
+    name: "Academic subsystem",
+    states: ["OPERATIONAL", "CAFFEINE-DEPENDENT", "DEADLINE-DRIVEN", "STABLE"],
+  },
+  {
+    name: "Career subsystem",
+    states: ["UNDER CONSTRUCTION", "LOADING...", "PROGRESSING", "RECALCULATING"],
+  },
+  {
+    name: "DevOps subsystem",
+    states: ["PROGRESSING", "CONTAINERIZED", "MOSTLY GREEN", "YAML-LIMITED"],
+  },
+  {
+    name: "Romantic decision-making subsystem",
+    states: ["REQUIRES SUPERVISION", "UNDER REVIEW", "ROLLBACK ADVISED", "QUARANTINED"],
+  },
+  {
+    name: "Financial subsystem",
+    states: ["LOW POWER MODE", "RATIONING", "SURPRISINGLY OKAY", "AIRPLANE MODE"],
+  },
+  {
+    name: "Pilates subsystem",
+    states: ["INITIALIZING", "WARMING UP", "CORE ENGAGED", "SCHEDULED FOR LATER"],
+  },
+  {
+    name: "Sleep subsystem",
+    states: ["DEPRECATED", "PARTIALLY RESTORED", "NEGOTIATING", "OVERCLOCKED"],
+  },
+  {
+    name: "Overthinking daemon",
+    states: ["RUNNING (as always)", "CONSUMING 62% RAM", "CANNOT BE KILLED", "IDLE (suspicious)"],
+  },
 ];
 
 export const CHAOS_MESSAGES = [
@@ -59,11 +83,23 @@ export const DEVOPS_SKILLS = [
 ];
 
 export const DEVOPS_INCIDENTS = [
-  { incident: "User has been staring at a Dockerfile for 47 minutes.", remediation: "Touch grass." },
+  {
+    incident: "User has been staring at a Dockerfile for 47 minutes.",
+    remediation: "Touch grass.",
+  },
   { incident: "Merge conflict resolved by vibes.", remediation: "Read the diff. Just once." },
-  { incident: "Pipeline failed on a trailing whitespace.", remediation: "Blame YAML. It deserves it." },
-  { incident: "terraform destroy typed in the wrong terminal.", remediation: "Breathe. Check the workspace." },
-  { incident: "Logs read top to bottom, panic read bottom to top.", remediation: "grep, then panic." },
+  {
+    incident: "Pipeline failed on a trailing whitespace.",
+    remediation: "Blame YAML. It deserves it.",
+  },
+  {
+    incident: "terraform destroy typed in the wrong terminal.",
+    remediation: "Breathe. Check the workspace.",
+  },
+  {
+    incident: "Logs read top to bottom, panic read bottom to top.",
+    remediation: "grep, then panic.",
+  },
 ];
 
 export const TERMINAL_RESPONSES: Record<string, string[]> = {
@@ -120,7 +156,12 @@ export const PILATES_SESSIONS = [
   { id: "core-basics", title: "Core Basics", minutes: 15, level: "Beginner" as const },
   { id: "mat-flow", title: "Mat Flow", minutes: 25, level: "Beginner" as const },
   { id: "mobility-reset", title: "Mobility Reset", minutes: 20, level: "Beginner" as const },
-  { id: "controlled-breathing", title: "Breath & Control", minutes: 12, level: "Beginner" as const },
+  {
+    id: "controlled-breathing",
+    title: "Breath & Control",
+    minutes: 12,
+    level: "Beginner" as const,
+  },
   { id: "full-body", title: "Full Body Flow", minutes: 35, level: "Intermediate" as const },
   { id: "stability", title: "Stability Work", minutes: 30, level: "Intermediate" as const },
 ];

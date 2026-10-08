@@ -24,7 +24,10 @@ export function BrainModule() {
   const [input, setInput] = useState("");
   const [note, setNote] = useState("Cognitive scheduler running in fair-ish mode.");
 
-  const load = Math.min(100, procs.reduce((a, p) => a + p.load, 0));
+  const load = Math.min(
+    100,
+    procs.reduce((a, p) => a + p.load, 0),
+  );
 
   function add(e: React.FormEvent) {
     e.preventDefault();
